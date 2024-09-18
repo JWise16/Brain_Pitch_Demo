@@ -1,0 +1,41 @@
+.modules-container {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .modules-container h2 {
+    font-size: 1.5rem;
+    color: white;
+    background-color: #b19cd9; /* Light purple background */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .modules-list, .lessons-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .module, .lesson {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px dotted #4b3f72;
+    border-radius: 5px;
+    background-color: #e0d6f8; /* Light purple background, slightly darker */
+  }
+  
+  .lessons-list {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+  .lesson-details {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    background-color: #d1c4f1;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

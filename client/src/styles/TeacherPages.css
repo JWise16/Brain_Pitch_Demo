@@ -1,0 +1,16 @@
+.teacher-page-container {
+  display: flex;
+}
+
+.teacher-navbar {
+  flex-shrink: 0;
+}
+
+.modules-container, .controls-container, .student-view-container {
+  flex-grow: 1;
+  background-color: #f9f9ff; /* Light background color */
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}

@@ -1,0 +1,20 @@
+.student-view-container {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .student-view-container h2 {
+    font-size: 1.5rem;
+    color: white;
+    background-color: #b19cd9; /* Light purple background */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .student-view-container p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #4b3f72;
+  }
+  
