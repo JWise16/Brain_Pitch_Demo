@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm start",
-  "server": "cd server && nodemon index.js",
-  "dev": "concurrently \"npm run client\" \"npm run server\""
+    "server": "cd server && nodemon index.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,14 @@
   "devDependencies": {
     "concurrently": "^9.0.1",
     "nodemon": "^3.1.5"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.2",
+    "@langchain/openai": "^0.3.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "langchain": "^0.3.2"
   }
 }
