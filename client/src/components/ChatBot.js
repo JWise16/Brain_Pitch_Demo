@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import './ChatBot.css';
 
 const ChatBot = () => {
@@ -9,28 +8,62 @@ const ChatBot = () => {
 
   const sendMessage = async () => {
     if (!input) return;
+
     const newMessages = [...messages, { sender: 'user', text: input }];
     setMessages(newMessages);
     setInput('');
 
+    console.log("Sending message:", input);
+
     try {
-      const response = await axios.post('http://localhost:5000/api/chat', {
-        sessionId,
-        message: input,
+      const response = await fetch('http://localhost:5000/api/chat/stream', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'text/event-stream',
+        },
+        body: JSON.stringify({ sessionId, message: input }),
       });
 
-      setMessages([
-        ...newMessages,
-        { sender: 'bot', text: response.data.response },
-      ]);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let botMessage = ""; // To concatenate the chunks
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value);
+        console.log("Received chunk:", chunk);
+        botMessage += chunk; // Concatenate the chunk directly
+      }
+
+      // Clean up the message before setting the state
+      botMessage = botMessage.replace(/^\s*data:\s*/gm, '').trim();
+      console.log("Concatenated message:", botMessage);
+
+      // Update state with the concatenated and cleaned message
+      if (botMessage) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { sender: 'bot', text: botMessage },
+        ]);
+      }
+
+      console.log("Message sent successfully");
     } catch (error) {
-      console.error(error);
+      console.error("Request error:", error);
     }
   };
 
   useEffect(() => {
     const messageBox = document.getElementById('messageBox');
-    messageBox.scrollTop = messageBox.scrollHeight;
+    if (messageBox) {
+      messageBox.scrollTop = messageBox.scrollHeight;
+    }
   }, [messages]);
 
   return (

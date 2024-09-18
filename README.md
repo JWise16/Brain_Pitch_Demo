@@ -30,6 +30,8 @@ Brain Pitch Demo is an AI-powered tutoring/teaching assistant application design
 - Node.js (v18.12.1 or later)
 - npm (v6 or later)
 - OpenAI API Key
+- Upstash Redis REST URL and Token
+- Anthropic API Key
 
 ## Getting Started
 
@@ -67,9 +69,12 @@ Brain Pitch Demo is an AI-powered tutoring/teaching assistant application design
 
 5. **Configure Environment Variables**
 
-    Create a `.env` file in the `server` directory and add your OpenAI API key:
+    Create a `.env` file in the `server` directory and add your API keys and tokens:
     ```env
     OPENAI_API_KEY=your-openai-api-key
+    UPSTASH_REDIS_REST_URL=your-upstash-redis-rest-url
+    UPSTASH_REDIS_REST_TOKEN=your-upstash-rest-token
+    ANTHROPIC_API_KEY=your-anthropic-api-key
     ```
 
 ### Running the Project
@@ -86,12 +91,13 @@ The React app will run on `http://localhost:3000` and the Node.js server will ru
 #### Structure
 
 - **`/server/controllers`**: Request handlers.
-- **`/server/models`**: Data models.
+- **`/server/models`**: Data models (currently empty but planned for future use).
 - **`/server/routes`**: API routes.
 
 #### API Endpoints
 
 - **POST `/api/chat`**: Endpoint for interacting with the chatbot.
+- **POST `/api/chat/stream`**: Endpoint for streaming chat responses.
 
 ### Frontend
 
@@ -104,7 +110,7 @@ The React app will run on `http://localhost:3000` and the Node.js server will ru
 
 ### ChatBot Component
 
-The `ChatBot` component is located in `client/src/components/ChatBot.js` and has a dedicated stylesheet `ChatBot.css` for styling. It interacts with the `/api/chat` endpoint to provide a conversational experience.
+The `ChatBot` component is located in `client/src/components/ChatBot.js` and has a dedicated stylesheet `ChatBot.css` for styling. It interacts with the `/api/chat` and `/api/chat/stream` endpoints to provide a conversational experience.
 
 ## Built With
 
