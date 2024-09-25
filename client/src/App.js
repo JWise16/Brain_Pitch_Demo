@@ -6,6 +6,7 @@ import TeacherModulesPage from './pages/TeacherModulesPage';
 import TeacherControlsPage from './pages/TeacherControlsPage';
 import TeacherStudentViewPage from './pages/TeacherStudentViewPage';
 import StudentChatbotPage from './pages/StudentChatbotPage';
+import KnowledgeCheck from './components/Student/KnowledgeCheck'; // Import the KnowledgeCheck component
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/teacher/controls" element={<TeacherControlsPage />} />
         <Route path="/teacher/student-view" element={<TeacherStudentViewPage />} />
         <Route path="/student/chatbot" element={<StudentChatbotPage />} />
+        <Route path="/student/knowledge-check" element={<KnowledgeCheck />} />
       </Routes>
     </Router>
   );
