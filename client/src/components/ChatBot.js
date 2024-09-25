@@ -16,7 +16,7 @@ const ChatBot = () => {
     console.log("Sending message:", input);
 
     try {
-      const response = await fetch('http://localhost:5002/api/chat/stream', {
+      const response = await fetch('http://localhost:5002/api/chat/student-chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,18 +31,19 @@ const ChatBot = () => {
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
-      let botMessage = ""; // To concatenate the chunks
+      let botMessage = "";
 
       while (true) {
         const { value, done } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value);
-        // console.log("Received chunk:", chunk);
-        const formatted_chunk = chunk.split('\n').filter(line => line.startsWith('data:')).map(line => line.replace('data: ', '')).join('');
-        // console.log("Formatted chunk:", formatted_chunk);
-        botMessage += formatted_chunk; // Concatenate the chunk directly
+        const formatted_chunk = chunk.split('\n')
+          .filter(line => line.startsWith('data:'))
+          .map(line => line.replace('data: ', ''))
+          .join('');
+        botMessage += formatted_chunk;
       }
-      
+
       if (botMessage) {
         setMessages((prevMessages) => [
           ...prevMessages,

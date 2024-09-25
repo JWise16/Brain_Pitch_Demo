@@ -1,0 +1,41 @@
+Study guide for SCI10 Midterm Exam – March 8th
+General exam information: Assessing your understanding of biology concepts will be ~2/3 of the midterm exam. To the exam you will be allowed to bring one 3x5 notecard for any notes; both sides may be used. Electronegativity values for chemical elements will be provided on the exam. Questions will be short answer formats (1-2 sentences), matching, single term responses. See the sample exam questions provided on Canvas as a guide. Prof. Wiley will hold a drop-in optional review session on Monday March 6, time TBD.
+Study strategy:
+1. Use the reading guides posted for each lecture and review rusty ideas through text reading.
+2. Use class notes and worksheets to review how we practiced and applied the concepts in class. Try the blank worksheets again. Review the worksheet answer keys posted on the “Answer Keys” page under Modules à Lecture
+3. Review Problem Sets 1 & 2 and their answer keys to practice applying the ideas from class.
+4. Use the list below to understand expectations for how to apply the concepts learned. Each of these items on the list were practiced in class and reinforced on Problem Sets.
+5. Try the sample exam questions.
+The following is a list of applications of the cell biology and biochemistry concepts that you learned in the first 5 weeks of SCI10. These are things that you should be able to do with the concepts learned.
+• Determine how many covalent bonds a given element (H,O,N, or C) can make.
+• Look at the structure of a molecule and:
+-identify polar and nonpolar covalent bonds;
+-assign partial charges to atoms;
+-determine if a molecule is amphipathic (distinct regions of polarity and non-polarity) -predict a molecule’s behavior in the presence of water based on its polar and nonpolar regions
+• Look at the structure of a molecule and determine the types of noncovalent bonds it could participate in (H-bonds, ionic interactions, Van der Waals)
+• Recognize the atoms eliminated in a condensation (dehydration) reaction to make polymers out of subunits in each biomolecule – concentrating on carbohydrates and proteins as examples. (Remember that you eliminate water to make a new covalent bond between subunits.)
+• Recognize structure of glycerol, fatty acids, and a phospholipid
+• Recognize a glycosidic bond in carbohydrate polymers
+• Recognize structures of mono, di, and polysaccharides
+ 
+• *Explain how the differences in chemical structures relate to the differences in form and function of cellulose vs. glycogen. It’s about the OH group on C1 in the carbon ring being “up” or “down”.
+• For proteins, identify peptide bonds between amino acids, a polypeptide backbone, and R-groups (side chains) in a polypeptide chain
+• Classify a given amino acid as 1) polar charged, 2) polar uncharged, or 3) nonpolar
+• Recognize protein secondary structures and know the non-covalent bonds that stabilize
+them (H-bonds!)
+• Be able to predict where stretches of polar, charged, or nonpolar amino acids might be located in a fully folded protein that is in water, or that goes through the lipid interior of a membrane – similar to Problem Set 2, #1.
+• Predict if the membrane fluidity would increase or decrease with:
+- more saturated or unsaturated fatty acids in the membrane phospholipids - longer or shorter fatty acid tails in the membrane phospholipids
+- trans-fatty acids instead of cis-fatty acids in membrane phospholipids
+• Predict if a given molecule would be able to cross the lipid bilayer membrane easily, or would require assistance from protein channels or transporters, based on its chemical properties (size and polarity). Recognize conditions when active transport is needed.
+• If given a single strand of DNA sequence, write the bases of a complementary strand of DNA, in the correct direction.
+• Sketch the leading and lagging strands in a replication fork; place Okazaki fragments and RNA primers in the right places (as we did in class).
+• Discuss the roles of major replication enzymes and other proteins; predict the consequence to replication if they were missing from a cell. Focus on: helicase, topoisomerase, primase, DNA polymerase, ligase. Understand why single strand binding proteins are necessary!
+• If given the coding and template strands of a gene in DNA form, write the mRNA in the correct direction, subbing U’s for T’s as we practiced in class.
+• Write the mRNA that would be made from a given gene sequence, in the correct direction, with the correct nucleotides (U instead of T).
+• Translate a given mRNA into protein, starting at a START codon, stopping at the STOP codon.
+• Determine the consequence to a polypeptide of different mutations - changes in base sequence (change of base, insertion or deletion of bases)
+• Determine the amino acid that is attached to a tRNA with a given anticodon.
+  
+• Predict the consequences of given mutations in different regions of a gene: Promoters, introns, or exons. Which location(s) might affect the amount of a protein made? Which might location(s) might affect the structure/function of a protein?
+ 

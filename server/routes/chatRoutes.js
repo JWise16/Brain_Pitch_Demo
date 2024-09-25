@@ -1,8 +1,11 @@
 const express = require('express');
-const { handleChatStream } = require('../controllers/chatController');
+const { handleChatStream, handleStudentChatbot } = require('../controllers/chatController');
 const router = express.Router();
 
-// Assume that the frontend post call hits the below endpoint 
+// Existing route
 router.post('/chat/stream', handleChatStream);
+
+// New route for StudentChatbot
+router.post('/student-chatbot', handleStudentChatbot);
 
 module.exports = router;
