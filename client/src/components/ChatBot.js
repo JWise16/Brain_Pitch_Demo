@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './ChatBot.css';
 
-const ChatBot = () => {
-  const [messages, setMessages] = useState([]);
+const ChatBot = ({ messages, onSendMessage, sessionId = 'default-session' }) => {
   const [input, setInput] = useState('');
-  const [sessionId] = useState('default-session');
 
   const sendMessage = async () => {
     if (!input) return;
 
-    const newMessages = [...messages, { sender: 'user', text: input }];
-    setMessages(newMessages);
-    setInput('');
+    // Add the user's message to the messages with sender: 'user'
+    onSendMessage({ sender: 'user', text: input }); // Use the parent's function to add the user's message
+
+    setInput(''); // Clear input field after sending
 
     console.log("Sending message:", input);
 
@@ -37,6 +36,12 @@ const ChatBot = () => {
         const { value, done } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value);
+       
+        botMessage += chunk; // Accumulate bot response chunks
+      }
+
+      botMessage = botMessage.replace(/^\s*data:\s*/gm, '').trim(); // Clean up the message
+      console.log("Bot message:", botMessage);
         const formatted_chunk = chunk.split('\n')
           .filter(line => line.startsWith('data:'))
           .map(line => line.replace('data: ', ''))
@@ -51,12 +56,14 @@ const ChatBot = () => {
         ]);
       }
 
-      console.log("Message sent successfully");
+      // Add the bot's message to the messages with sender: 'bot'
+      onSendMessage({ sender: 'bot', text: botMessage });
     } catch (error) {
       console.error("Request error:", error);
     }
   };
 
+  // Auto scroll to the latest message
   useEffect(() => {
     const messageBox = document.getElementById('messageBox');
     if (messageBox) {
