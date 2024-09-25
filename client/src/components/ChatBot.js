@@ -15,7 +15,7 @@ const ChatBot = ({ messages, onSendMessage, sessionId = 'default-session' }) => 
     console.log("Sending message:", input);
 
     try {
-      const response = await fetch('http://localhost:5001/api/chat/stream', {
+      const response = await fetch('http://localhost:5002/api/chat/student-chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,17 +30,31 @@ const ChatBot = ({ messages, onSendMessage, sessionId = 'default-session' }) => 
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
-      let botMessage = ""; // To concatenate the chunks
+      let botMessage = "";
 
       while (true) {
         const { value, done } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value);
+       
         botMessage += chunk; // Accumulate bot response chunks
       }
 
       botMessage = botMessage.replace(/^\s*data:\s*/gm, '').trim(); // Clean up the message
       console.log("Bot message:", botMessage);
+        const formatted_chunk = chunk.split('\n')
+          .filter(line => line.startsWith('data:'))
+          .map(line => line.replace('data: ', ''))
+          .join('');
+        botMessage += formatted_chunk;
+      }
+
+      if (botMessage) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { sender: 'bot', text: botMessage },
+        ]);
+      }
 
       // Add the bot's message to the messages with sender: 'bot'
       onSendMessage({ sender: 'bot', text: botMessage });

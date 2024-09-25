@@ -1,22 +1,22 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 require('dotenv').config();
-
 const chatRoutes = require('./routes/chatRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5002;
 
-app.use(cors({
-  origin: 'http://localhost:3000', // Allow only the React app to make requests
-  methods: ['GET', 'POST'], // Allow both GET and POST methods
-  allowedHeaders: ['Content-Type', 'Accept'] // Allow necessary headers
-}));
-
+app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/api', chatRoutes);
+// Middleware to log incoming requests
+app.use((req, res, next) => {
+  console.log(`${req.method} request for ${req.url}`);
+  next();
+});
+
+app.use('/api/chat', chatRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
