@@ -4,28 +4,44 @@
     display: flex;
   }
   
-  .sidebar {
-    width: 200px;
-    background-color: #ae77d6;
-    color: white;
-    padding: 20px;
-    font-family: 'Montserrat';
-    font-weight: 400;
-  }
-  
-  .sidebar h3 {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
+/* General sidebar styling */
+.sidebar {
+  width: 200px;
+  background-color: #ae77d6;
+  color: white;
+  padding: 20px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 10px; /* Add padding for better clickable area */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for non-active items */
+.sidebar li:hover {
+  background-color: #9461bf; /* Hover effect for non-active items */
+}
+
+/* Active item styling: stays darker after click */
+.sidebar li.active {
+  background-color: #5a37a6; /* Darker color for active item */
+  font-weight: 600; /* Bold the active item */
+  border-left: 4px solid #fff; /* Add left border to highlight */
+}
+
   
   .chatbot-container {
     flex-grow: 1;
