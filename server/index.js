@@ -6,7 +6,7 @@ require('dotenv').config();
 const chatRoutes = require('./routes/chatRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.use(cors({
   origin: 'http://localhost:3000', // Allow only the React app to make requests
